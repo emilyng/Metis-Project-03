@@ -76,24 +76,24 @@ Regression model to pick the words in the book description that serve as best pr
 The deployment of the model is implemented through a streamlit webapp. Source code for
 this is provided in the `webapp` folder. Folder contains:
 
-####`text_process.py`
+#### `text_process.py`
 Code for text preprocessing of Book title and description that would be inputted into
 the predictor.
 
-####`imb_undersample.py`
+#### `imb_undersample.py`
 Code to implement undersampling of the 0th class (non best seller) to account for large
 class imbalance.
 
-####`OptimalC.py`
+#### `OptimalC.py`
 Code to find the optimal regularization C parameter for the Lasso Logistic regression.
 The goal is to find the words in books descriptions that would serve as best predictors
 of a NYT best seller book without having these words outnumber the amount of book features
 such as number of pages, semantics, genre, etc. The limit for the number of words picked from this
 model is 25 words. Optimal C = 0.2.
 
-####`selectBestWords.py`
+#### `selectBestWords.py`
 Code to perform the Lasso Logistic regression to pick out the word features for the
 final model.
 
-###To run Webapp: 
+### To run Webapp: 
 `streamlit run nyt_webapp.py`
