@@ -4,27 +4,27 @@
 For my Metis Project 3 I built a model that predicts whether a book will become a
 New York times bestseller. The features I included in the modeling are:
 
--Number of Pages
--Title
--Description
--Whether the author has been on the list before
--If the book is published under one of the Big 5 publishers
--If the book is part of a series
--Book Genre
+- Number of Pages
+- Title
+- Description
+- Whether the author has been on the list before
+- If the book is published under one of the Big 5 publishers
+- If the book is part of a series
+- Book Genre
 
 --
 
 ### System Requirements:
 Some of the packages used in this project include:
 
--`numpy`
--`pandas`
--`sklearn`
--`nltk`
--`TextBlob`
--`textstats`
--`imblearn`
--`streamlit`
+- `numpy`
+- `pandas`
+- `sklearn`
+- `nltk`
+- `TextBlob`
+- `textstats`
+- `imblearn`
+- `streamlit`
 
 --
 
@@ -59,14 +59,14 @@ TextBlob was used to measuring Title and Description polarity.
 texstats was used for features: Description length, average word length, Flesch Reading Ease, and more.
 
 Models tested includes:
--Dummy Classifier
--Logistic Regression
--k Nearest Neighbors
--Gaussian Naive Bayes
--Bernoulli Naive Bayes
--SVC
--Decision Tree
--Random Forest
+- Dummy Classifier
+- Logistic Regression
+- k Nearest Neighbors
+- Gaussian Naive Bayes
+- Bernoulli Naive Bayes
+- SVC
+- Decision Tree
+- Random Forest
 
 ### Results
 The best performing model is a Random Forest Classifier with a preliminary Lasso Logistic
