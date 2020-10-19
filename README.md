@@ -9,8 +9,7 @@ Model predicts whether a book will become a New York times bestseller. The featu
 - If the book is part of a series
 - Book Genre
 
---
-
+--------
 ### System Requirements:
 Some of the packages used in this project include:
 
@@ -23,7 +22,7 @@ Some of the packages used in this project include:
 - `imblearn`
 - `streamlit`
 
---
+----
 
 Most of the project code is contained in the notebooks folder.
 
@@ -65,11 +64,23 @@ Models tested includes:
 - Decision Tree
 - Random Forest
 
+--------
+
 ### Results
 The best performing model is a Random Forest Classifier with a preliminary Lasso Logistic
 Regression model to pick the words in the book description that serve as best predictors.
 
-### Streamlit Webapp
+#### Metrics
+![Metrics vs Threshold](https://raw.githubusercontent.com/emilyng/NYT_Best_Sellers/master/plots/metrics_threshold.svg)
+
+#### Feature Importances
+![Book_Features](https://raw.githubusercontent.com/emilyng/NYT_Best_Sellers/master/plots/book_feat-importances.svg)
+
+![Word_Features](https://raw.githubusercontent.com/emilyng/NYT_Best_Sellers/master/plots/word-importances.svg)
+
+---------
+
+## Streamlit Webapp
 The deployment of the model is implemented through a streamlit webapp. Source code for
 this is provided in the `webapp` folder. Folder contains:
 
