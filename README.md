@@ -1,8 +1,5 @@
 # NYT Best Seller Predictor
-## Metis Project-03
-
-For my Metis Project 3 I built a model that predicts whether a book will become a
-New York times bestseller. The features I included in the modeling are:
+Model predicts whether a book will become a New York times bestseller. The features used for the model are:
 
 - Number of Pages
 - Title
@@ -30,7 +27,7 @@ Some of the packages used in this project include:
 
 Most of the project code is contained in the notebooks folder.
 
-### NYT API Requests
+### NYT API
 Data on NYT best sellers is gathered using the [NYT API](https://developer.nytimes.com/).
 Code for how this data is retrieved is located in the `NYT API requests.ipynb` notebook.
 It makes requests to the API and saves the data into a json file.
@@ -40,7 +37,7 @@ Reading the NYT best sellers .json files into pandas dataframes occurs in  the
 `Creating NYT Best Seller Datasets.ipynb` notebook.
 
 ### Merging Datasets
-For this project, I used several datasets. The self retrieved data from the NYT API,
+The self retrieved data from the NYT API,
 another NYT best sellers dataset from Kaggle, and a general books dataset from Kaggle
 which was scrapped from goodreads.com. I choose to include the second NYT best sellers
 dataset in an effort to be able to include more NYT best sellers books and increase the chances
