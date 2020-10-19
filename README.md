@@ -1,4 +1,4 @@
-# NYT Best Seller Predictor
+# New York Times Best Seller Predictor
 Model predicts whether a book will become a New York times bestseller. The features used for the model are:
 
 - Number of Pages
