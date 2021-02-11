@@ -84,7 +84,7 @@ def get_desc_data(string):
     return desc_semantic, word_cnt, description_len, number_unique_words, \
            average_word_len, syl_count, lex_count, sent_count, flesch
 
-stop = stopwords.words('english')
+stop = nltk.download('stopwords') 
 def remove_stop_words(string):
     '''
     Input: description string
