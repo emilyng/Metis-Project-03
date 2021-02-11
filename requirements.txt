@@ -1,0 +1,4 @@
+nltk
+imblearn
+textblob
+textstat
