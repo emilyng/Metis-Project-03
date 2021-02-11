@@ -1,36 +1,32 @@
-# NYT Best Seller Predictor
-## Metis Project-03
+# New York Times Best Seller Predictor
+Model predicts whether a book will become a New York times bestseller. The features used for the model are:
 
-For my Metis Project 3 I built a model that predicts whether a book will become a
-New York times bestseller. The features I included in the modeling are:
+- Number of Pages
+- Title
+- Description
+- Whether the author has been on the list before
+- If the book is published under one of the Big 5 publishers
+- If the book is part of a series
+- Book Genre
 
--Number of Pages
--Title
--Description
--Whether the author has been on the list before
--If the book is published under one of the Big 5 publishers
--If the book is part of a series
--Book Genre
-
---
-
+--------
 ### System Requirements:
 Some of the packages used in this project include:
 
--`numpy`
--`pandas`
--`sklearn`
--`nltk`
--`TextBlob`
--`textstats`
--`imblearn`
--`streamlit`
+- `numpy`
+- `pandas`
+- `sklearn`
+- `nltk`
+- `TextBlob`
+- `textstats`
+- `imblearn`
+- `streamlit`
 
---
+----
 
 Most of the project code is contained in the notebooks folder.
 
-### NYT API Requests
+### NYT API
 Data on NYT best sellers is gathered using the [NYT API](https://developer.nytimes.com/).
 Code for how this data is retrieved is located in the `NYT API requests.ipynb` notebook.
 It makes requests to the API and saves the data into a json file.
@@ -40,7 +36,7 @@ Reading the NYT best sellers .json files into pandas dataframes occurs in  the
 `Creating NYT Best Seller Datasets.ipynb` notebook.
 
 ### Merging Datasets
-For this project, I used several datasets. The self retrieved data from the NYT API,
+The self retrieved data from the NYT API,
 another NYT best sellers dataset from Kaggle, and a general books dataset from Kaggle
 which was scrapped from goodreads.com. I choose to include the second NYT best sellers
 dataset in an effort to be able to include more NYT best sellers books and increase the chances
@@ -59,41 +55,53 @@ TextBlob was used to measuring Title and Description polarity.
 texstats was used for features: Description length, average word length, Flesch Reading Ease, and more.
 
 Models tested includes:
--Dummy Classifier
--Logistic Regression
--k Nearest Neighbors
--Gaussian Naive Bayes
--Bernoulli Naive Bayes
--SVC
--Decision Tree
--Random Forest
+- Dummy Classifier
+- Logistic Regression
+- k Nearest Neighbors
+- Gaussian Naive Bayes
+- Bernoulli Naive Bayes
+- SVC
+- Decision Tree
+- Random Forest
+
+--------
 
 ### Results
 The best performing model is a Random Forest Classifier with a preliminary Lasso Logistic
 Regression model to pick the words in the book description that serve as best predictors.
 
-### Streamlit Webapp
+#### Metrics
+![Metrics vs Threshold](https://raw.githubusercontent.com/emilyng/NYT_Best_Sellers/master/plots/metrics_threshold.svg)
+
+#### Feature Importances
+![Book_Features](https://raw.githubusercontent.com/emilyng/NYT_Best_Sellers/master/plots/book_feat-importances.svg)
+
+![Word_Features](https://raw.githubusercontent.com/emilyng/NYT_Best_Sellers/master/plots/word-importances.svg)
+
+---------
+
+## Streamlit Webapp
 The deployment of the model is implemented through a streamlit webapp. Source code for
 this is provided in the `webapp` folder. Folder contains:
 
-####`text_process.py`
+#### `text_process.py`
 Code for text preprocessing of Book title and description that would be inputted into
 the predictor.
 
-####`imb_undersample.py`
+#### `imb_undersample.py`
 Code to implement undersampling of the 0th class (non best seller) to account for large
 class imbalance.
 
-####`OptimalC.py`
+#### `OptimalC.py`
 Code to find the optimal regularization C parameter for the Lasso Logistic regression.
 The goal is to find the words in books descriptions that would serve as best predictors
 of a NYT best seller book without having these words outnumber the amount of book features
 such as number of pages, semantics, genre, etc. The limit for the number of words picked from this
 model is 25 words. Optimal C = 0.2.
 
-####`selectBestWords.py`
+#### `selectBestWords.py`
 Code to perform the Lasso Logistic regression to pick out the word features for the
 final model.
 
-###To run Webapp: 
+### To run Webapp: 
 `streamlit run nyt_webapp.py`
